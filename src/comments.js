@@ -12,7 +12,7 @@ export default React.createClass({
     return { data: toListOfComments([]) }
   },
   handleCommentSubmit: function (comment: Immutable.Record) {
-    const comments: Immutable.List = this.state.data;
+    const comments: any/*Immutable.List*/ = this.state.data;
     const newComment = new CommentRecord(comment);
     this.replaceState({
       data: comments.concat([ newComment.set('id', `local_${Date.now()}`) ])

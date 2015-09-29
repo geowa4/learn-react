@@ -1,7 +1,11 @@
 [ignore]
+.*/dist.*
+.*node_modules/immutable.*
 
 [include]
+./node_modules/immutable/dist/immutable.js
 
 [libs]
+./lib/
 
 [options]

@@ -16,7 +16,7 @@ export default React.createClass({
     React.findDOMNode(this.refs.author).focus();
     return;
   },
-  render: function (): any {
+  render: function (): ReactElement {
     return (
       <form className="commentForm" onSubmit={this.handleSubmit}>
         <input type="text" placeholder="Your name" ref="author" />

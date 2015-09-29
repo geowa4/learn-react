@@ -7,6 +7,6 @@ export const CommentRecord = Immutable.Record({
   text: ''
 });
 
-export function toListOfComments (comments: Array<any>): number {
+export function toListOfComments (comments: Array<Object>): Immutable.List {
   return Immutable.List(comments.map(c => new CommentRecord(c)));
 };

@@ -5,14 +5,14 @@ const webpack = require('webpack-stream');
 
 const srcDir = 'src';
 const distDir = 'dist';
-const entrypoint = srcDir + '/main.js';
+const entrypoint = `${srcDir}/main.js`;
 
 gulp.task('scripts', function () {
   return gulp.src(entrypoint)
-    .pipe(webpack(require('./.webpack.config.js')(argv.production)))
-    .pipe(gulp.dest(distDir));
+  .pipe(webpack(require('./.webpack.config.js')(argv.production)))
+  .pipe(gulp.dest(distDir));
 });
 
 gulp.task('dev', [ 'scripts' ], function () {
-return gulp.watch(srcDir + '/*', [ 'scripts' ]);
+  return gulp.watch(srcDir + '/*', [ 'scripts' ]);
 });
