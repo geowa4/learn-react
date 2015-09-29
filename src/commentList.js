@@ -19,7 +19,7 @@ const Comment = React.createClass({
 
 export default React.createClass({
   mixins: [React.addons.PureRenderMixin],
-  render: function() {
+  render: function(): any {
     const commentNodes = this.props.data.map(function (comment) {
       return (
         <Comment key={comment.get('id')} author={comment.get('author')}>
