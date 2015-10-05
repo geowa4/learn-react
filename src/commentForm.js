@@ -1,8 +1,7 @@
 /* @flow */
-import React from 'react/addons';
+import React from 'react';
 
 export default React.createClass({
-  mixins: [React.addons.PureRenderMixin],
   handleSubmit: function (e: Event) {
     e.preventDefault();
     const author = React.findDOMNode(this.refs.author).value.trim();

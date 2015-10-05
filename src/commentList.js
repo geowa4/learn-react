@@ -1,9 +1,8 @@
 /* @flow */
-import React from 'react/addons';
+import React from 'react';
 import marked from 'marked';
 
 const Comment = React.createClass({
-  mixins: [React.addons.PureRenderMixin],
   render: function() {
     const rawMarkup = marked(this.props.children.toString(), {sanitize: true});
     return (
@@ -18,7 +17,6 @@ const Comment = React.createClass({
 });
 
 export default React.createClass({
-  mixins: [React.addons.PureRenderMixin],
   render: function(): ReactElement {
     const commentNodes = this.props.data.map(function (comment) {
       return (

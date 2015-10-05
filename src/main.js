@@ -1,8 +1,9 @@
 /* @flow */
-import React from 'react/addons';
-import CommentBox from './comments';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { CommentComponent } from './comments';
 
-React.render(
-  <CommentBox />,
+ReactDOM.render(
+  <CommentComponent />,
   document.getElementById('content')
 );

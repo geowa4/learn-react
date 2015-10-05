@@ -1,12 +1,23 @@
 /* @flow */
 import Immutable from 'immutable';
+import Rx from 'rx';
+import commentData from './commentData';
 
-export const CommentRecord = Immutable.Record({
+const CommentRecord = Immutable.Record({
   id: undefined,
   author: undefined,
   text: ''
 });
 
-export function toListOfComments (comments: Array<Object>): Immutable.List {
-  return Immutable.List(comments.map(c => new CommentRecord(c)));
-};
+const commentSubject = new Rx.BehaviorSubject(Immutable.List(commentData.map(c => {
+  return new CommentRecord(c);
+})));
+
+export const commentListStream = commentSubject.shareReplay(1);
+
+export function makeComment (commentObject): void {
+  commentObject.id = Date.now();
+  const commentList = commentSubject.getValue();
+  const newComment = new CommentRecord(commentObject);
+  commentSubject.onNext(commentList.push(newComment));
+}
