@@ -1,4 +1,3 @@
-/* @flow */
 import React from 'react';
 import RxReact from 'rx-react';
 import CommentForm from './commentForm';
@@ -19,7 +18,7 @@ export class CommentComponent extends RxReact.Component {
       .forEach(makeComment);
   }
 
-  render (): ReactElement {
+  render () {
     return (
       <div className="commentBox">
         <h1>Comments</h1>

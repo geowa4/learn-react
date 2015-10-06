@@ -1,4 +1,3 @@
-/* @flow */
 import React from 'react';
 import marked from 'marked';
 
@@ -17,7 +16,7 @@ const Comment = React.createClass({
 });
 
 export default React.createClass({
-  render: function(): ReactElement {
+  render: function () {
     const commentNodes = this.props.data.map(function (comment) {
       return (
         <Comment key={comment.get('id')} author={comment.get('author')}>
