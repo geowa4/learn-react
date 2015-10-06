@@ -1,7 +1,7 @@
 Learn React
 ===========
 
-Experimentations with React, Babel, and Webpack.
+Experimentations with React, RxJS, Babel, and Webpack.
 
 Usage
 -----
