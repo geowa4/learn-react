@@ -1,21 +1,21 @@
-import React from 'react';
-import RxReact from 'rx-react';
-import CommentForm from './commentForm';
-import CommentList from './commentList';
-import { commentListStream, makeComment } from './commentRecord';
+import React from 'react'
+import RxReact from 'rx-react'
+import CommentForm from './CommentForm'
+import CommentList from './CommentList'
+import { commentListStream, makeComment } from './CommentRecord'
 
 export class CommentComponent extends RxReact.Component {
   getStateStream () {
     return commentListStream.map(list => {
       return { data: list }
-    });
+    })
   }
 
   componentWillMount () {
-    super.componentWillMount();
-    this.makeComment = RxReact.FuncSubject.create();
+    super.componentWillMount()
+    this.makeComment = RxReact.FuncSubject.create()
     this.makeComment
-      .forEach(makeComment);
+      .forEach(makeComment)
   }
 
   render () {
@@ -25,7 +25,7 @@ export class CommentComponent extends RxReact.Component {
         <CommentList data={this.state.data} />
         <CommentForm onCommentSubmit={this.makeComment} />
       </div>
-    );
+    )
   }
 }
 
