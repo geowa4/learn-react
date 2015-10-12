@@ -24,3 +24,4 @@ export function makeComment (commentObject) {
   const newComment = new CommentRecord(commentObject)
   commentSubject.onNext(commentList.push(newComment))
 }
+

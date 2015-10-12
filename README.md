@@ -23,6 +23,8 @@ $ gulp dev
 $ hs
 ```
 
+Currently, tests are run separately with `npm test`.
+
 Explanation
 -----------
 
